@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sean Is So Nice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #e0f4ff, #c0d9ff);
+      color: #1f2933;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 2.5rem 2.75rem;
+      border-radius: 1.25rem;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 0.75rem;
+      color: #111827;
+    }
+
+    p.subtitle {
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin-bottom: 1.75rem;
+    }
+
+    #sentence {
+      min-height: 80px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      background: #f3f4ff;
+      color: #111827;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 999px;
+      padding: 0.85rem 1.8rem;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.45);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.55);
+      filter: brightness(1.05);
+    }
+
+    button:active {
+      transform: translateY(1px) scale(0.98);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+    }
+
+    footer {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>How Nice Is Sean?</h1>
+    <p class="subtitle">Press the button to get a random wholesome fact about Sean.</p>
+
+    <div id="sentence">
+      Click the button below to discover how nice Sean really is.
+    </div>
+
+    <button id="generateBtn">New Nice Sean Sentence</button>
+
+    <footer>
+      Made with ❤️ for Sean.
+    </footer>
+  </main>
+
+  <script>
+    const sentences = [
+      "Sean is so nice that talking to him feels like a little break from all the chaos.",
+      "Sean is the kind of nice that remembers the small things everyone else forgets.",
+      "Sean’s kindness shows up in the quiet moments when nobody’s watching.",
+      "Sean is so nice he makes every room feel a bit lighter just by walking in.",
+      "Sean listens like what you’re saying actually matters—because to him, it does.",
+      "Sean is the friend who checks you got home safe, even when he’s already tired.",
+      "Sean’s niceness isn’t loud, it’s steady—always there when you need it.",
+      "Sean is so nice he’ll hype you up even when you don’t believe in yourself.",
+      "Sean’s the type to share the last slice and still say he wasn’t hungry anyway.",
+      "Sean is so nice that people feel better just knowing he’s in their corner."
+    ];
+
+    const sentenceEl = document.getElementById("sentence");
+    const buttonEl = document.getElementById("generateBtn");
+
+    function getRandomSentence() {
+      const index = Math.floor(Math.random() * sentences.length);
+      return sentences[index];
+    }
+
+    function showRandomSentence() {
+      sentenceEl.textContent = getRandomSentence();
+    }
+
+    buttonEl.addEventListener("click", showRandomSentence);
+  </script>
+</body>
+</html>
